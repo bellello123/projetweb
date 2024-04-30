@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: launchv1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: appli
+  template:
+    metadata:
+      labels:
+        app: appli
+    spec:
+      containers:
+      - name: appli
+        image: prenom:tag
+        ports:
+        - containerPort: 8080
